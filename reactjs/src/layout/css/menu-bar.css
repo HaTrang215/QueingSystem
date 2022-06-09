@@ -1,0 +1,105 @@
+.menu-bar{
+    width: 200px;
+    height: 810px;
+
+    background: #FFFFFF;
+
+    box-shadow: 0px 4px 6px rgba(219, 219, 219, 0.5);
+    border-radius: 16px 0px 0px 16px;
+    float: left;
+}
+
+.logo{
+    width: 80px;
+    height: 64px;
+    margin: 32px 0px 0px 60px;
+}
+
+
+.menu-bar .menu-bar-content{
+    width: 100%;
+    margin-top: 66.02px;
+}
+
+.menu-bar .menu-bar-content .item{
+    cursor: pointer;
+}
+
+.menu-bar .menu-bar-content .item a{
+    color: #7E7D88;
+    text-decoration: none;
+    display: block;
+    padding: 0px 5px;
+    line-height: 50px;
+}
+
+.menu-bar .menu-bar-content .item a:hover{
+    width: 200px;
+    background: #FFF2E7;
+    color: #FF7506;
+    transition: 0.3s ease;
+}
+
+.menu-bar .menu-bar-content .item i{
+    margin-right: 10px;
+    margin-left: 15px;
+}
+
+.menu-bar .menu-bar-content .item .sub-menu{
+    width: 200px;
+    margin-left: 200px;
+    margin-right: -200px;
+    margin-top: -50px;
+    background: #FFFFFF;
+    border-radius: 0px 12px 12px 0px;;
+    display: none;
+    position: absolute;
+    z-index: 2;
+}
+
+.menu-bar-button{
+    position: absolute;
+    top: 732px;
+    width: 176px;
+    height: 48px;
+    left: 12px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 12px;
+    gap: 12px;
+    background: #FFF2E7;
+    border-radius: 8px;
+}
+
+.menu-bar-button a{
+    text-decoration: none;
+    color: #FF7506;
+}
+
+.menu-bar-button i{
+    margin-left: 10px;
+    margin-right: 15px;
+}
+
+.menu-bar .menu-bar-content .item .sub-menu a{
+    color: #7E7D88;
+}
+
+.menu-bar .menu-bar-content .item .sub-menu .active{
+    color: #ffffff;
+}
+
+.menu-bar .menu-bar-content .active {
+    width: 200px;
+    background: #FF7506;
+}
+
+.menu-bar .menu-bar-content .active i{
+    color: #ffffff;
+}
+
+.menu-bar .menu-bar-content .active a{
+    color: #ffffff;
+}
