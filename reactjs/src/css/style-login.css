@@ -26,6 +26,14 @@
     margin-bottom: 16px;
 }
 
+.row-button{
+    width: 100%;
+    margin-top: 32px;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
 .row-item p{
     font-family: 'Nunito';
     font-style: normal;
@@ -34,6 +42,36 @@
 
     color: #37474F;
     margin-bottom: 4px;
+}
+
+.input-fiel{
+    margin-top: 10px;
+    align-content: flex-start;
+}
+
+.input-fiel h2{
+    text-align: center;
+}
+
+.btn-cancel {
+    text-align: center;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 8px;
+    margin-right: 24px;
+
+    width: 162px;
+    height: 40px;
+
+    color: #FF9138;
+    border: 1px solid #FF9138;
+    background-color: #FFFFFF;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    filter: drop-shadow(0px 0px 6px #E7E9F2);
+    border-radius: 8px;
 }
 
 .username, .password{
@@ -92,14 +130,11 @@
 .btn-Login{
     width: 162px;
     height: 40px;
-    left: 215px;
-    top: 511px;
 
     background: #FF9138;
 
     box-shadow: 0px 0px 6px #E7E9F2;
     border-radius: 8px;
-    margin-left: 121px;
 
     font-weight: 700;
     font-size: 16px;
