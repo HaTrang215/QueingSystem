@@ -16,7 +16,7 @@ const forget_password1 = () => {
     const inputs = [
         {
             id: 1,
-            className: "username",
+            name: "email",
             type: "text",
             placeholder: "Nhập email",
             label: "Vui lòng nhập email để đặt lại mật khẩu của bạn *"

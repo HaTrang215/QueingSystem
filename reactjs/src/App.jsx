@@ -30,7 +30,7 @@ function App() {
   return (
     <div className="App">
         <Routes>
-          <Route path="/" element={<Dashboard/>}/>
+          <Route path="/dashboard" element={<Dashboard/>}/>
           <Route path="/login" element={<Login/>}/>
           <Route path="/forget-password-1" element={<Forgetpassword1/>}/>
           <Route path="/forget-password-2" element={<Forgetpassword2/>}/>
