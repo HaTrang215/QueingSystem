@@ -7,12 +7,12 @@ import Logo from '../assets/images/Logo-alta-l.png';
 import { ExclamationCircle} from 'react-bootstrap-icons';
 import { Link} from "react-router-dom";
 import axios from "axios";
-//import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 const login = () => {
 
-    //const history = useNavigate();
+    const history = useNavigate();
     const [values, setValue]= useState({
         username: "",
         password: ""
@@ -39,6 +39,8 @@ const login = () => {
         setValue({...values, [e.target.name]: e.target.value})
     }
 
+    const [err, setErr] = useState('');
+
     const onSubmit = async(e) => {
         e.preventDefault();
 
@@ -46,11 +48,33 @@ const login = () => {
             username: values.username,
             password: values.password
         }
-
-        axios.post('http://127.0.0.1:8000/api/login',data,)
-        .then(res =>{
-            console.log('Đăng nhập thành công')
-        })
+        axios.get('/sanctum/csrf-cookie').then(response => {
+            axios.post('/api/login',data)
+            .then(res =>{
+                if(res.data.status === 200){
+                    //console.log(res.data.object)
+                    if(res.data.object === 0){
+                        localStorage.setItem('auth_token', res.data.token);
+                        localStorage.setItem('auth_name', res.data.username);
+                        history("/dashboard",{ replace: true });
+                    }else{
+                        if(res.data.type === 1){
+                            history("/display-kios",{ replace: true });
+                        }else if(res.data.type === 2){
+                            history("/display-counter",{ replace: true });
+                        }else if(res.data.type === 3){
+                            history("/display-center",{ replace: true });
+                        }else{
+                            history("/user-interface",{ replace: true });
+                        }
+                    }
+                }else if(res.data.status === 401){
+                    setErr(res.data.messenger);
+                }else{
+                    setErr(res.data.messenger);
+                }
+            })
+        });
     }
 
   return (
@@ -68,16 +92,22 @@ const login = () => {
                 ))}
                 
                 <div className="row-item">
-                    <label className='warning-alert' ><ExclamationCircle/>Sai mật khẩu hoặc tên đăng nhập</label>
-                    <label><Link to='/forget-password-1' className='link-before'>Quên mật khẩu?</Link></label>
+                    {
+                        (err === '')? <label><Link to='/forget-password-1' className='link-before'>Quên mật khẩu?</Link></label> : <label className='warning-alert' ><ExclamationCircle/>{err}</label>
+                    }
+                    
                 </div>
                 <div className="row-button">
                     <input 
                         type="submit" 
                         value="Đăng nhập" 
                         className="btn-Login"
-                    />   
-                    <label><Link to='/forget-password-1' className='link-after'>Quên mật khẩu?</Link></label>  
+                    /> 
+                </div>
+                <div className="row-button">
+                    {
+                        (err === '')? '' : <label><Link to='/forget-password-1' className='link-after'>Quên mật khẩu?</Link></label>  
+                    } 
                 </div>
             </form>
         </div> 

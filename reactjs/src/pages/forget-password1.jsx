@@ -1,14 +1,16 @@
-import React, {useState} from 'react'
+/* eslint-disable react-hooks/rules-of-hooks */
+import React, {useState} from 'react';
 import '../css/style-login.css';
 import Input1 from '../components/Input1';
 import Panel from '../assets/images/Quên mật khẩu.png';
 import Logo from '../assets/images/Logo-alta-l.png';
 import { ExclamationCircle} from 'react-bootstrap-icons';
 import { Link} from "react-router-dom";
-
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const forget_password1 = () => {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const history  = useNavigate();
     const [values, setValue]= useState({
         email: ""
     })
@@ -26,13 +28,36 @@ const forget_password1 = () => {
     const onChange = (e) =>{
         setValue({...values, [e.target.name]: e.target.value})
     }
+    
+    const [err, setErr] = useState('');
+
+    const onSubmit = async(e) => {
+        e.preventDefault();
+
+        const data={
+            email: values.email,
+        }
+        axios.get('/sanctum/csrf-cookie').then(response => {
+            axios.post('/api/forgetpassword',data)
+            .then(res =>{
+                if(res.data.status === 200){
+                    localStorage.setItem('id_user', res.data.id);
+                    history("/forget-password-2",{ replace: true });
+                }else if(res.data.status === 401){
+                    setErr(res.data.messenger);
+                }else{
+                    setErr(res.data.messenger);
+                }
+            })
+        });
+    }
 
   return (
     <div className="login-container">
         <div className="login-main">
             <img src={Logo} alt="" />
-            <form action='/forget-password-2'>
-            <div class="input-fiel">
+            <form method='POST' onSubmit={onSubmit}>
+            <div className="input-fiel">
                 <h2>Đặt lại mật khẩu</h2>
             </div>
                 {inputs.map((input) =>(
@@ -44,14 +69,16 @@ const forget_password1 = () => {
                     />
                 ))}
                 <div className="row-item">
-                    <label className='warning-alert' ><ExclamationCircle/>Sai mật khẩu hoặc tên đăng nhập</label>
+                    {
+                        (err === '')? '' : <label className='warning-alert' ><ExclamationCircle/>{err}</label>
+                    }
                 </div>
                 <div className="row-button">
                     <Link to="/login" className="btn-cancel">Huỷ</Link>
                     <input 
                         type="submit" 
                         value="Tiếp tục" 
-                        className="btn-Login"
+                        className="btn-Continue"
                     />   
                 </div>
             </form>

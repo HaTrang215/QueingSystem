@@ -1,8 +1,11 @@
 import React from 'react'
+import GroupNavbar from '../components/GroupNavbar'
 
 const serial_number = () => {
   return (
-    <div>_</div>
+    <div className="container">
+      <GroupNavbar content='serial-number'/>
+    </div>
   )
 }
 

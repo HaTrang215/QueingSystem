@@ -1,8 +1,11 @@
 import React from 'react'
+import GroupNavbar from '../components/GroupNavbar'
 
 const report = () => {
   return (
-    <div>report</div>
+    <div className="container">
+      <GroupNavbar content='report'/>
+    </div>
   )
 }
 

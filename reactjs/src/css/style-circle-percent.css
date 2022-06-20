@@ -1,0 +1,107 @@
+.circle-percent-content{
+    width: 353px;
+    height: 83px;
+    background: #ffff;
+    box-shadow: 2px 2px 15px rgba(70, 64, 67, 0.1);
+    border-radius: 12px;
+    margin-top: 12px;
+    margin-left: 24px;
+    display: flex;
+    flex-direction: row;
+}
+
+.circle-percent1{
+    width: 60px;
+    height: 60px;
+    margin: 11px 12px 0px 16px;
+    border-radius: 50%;
+}
+
+.circle-percent2{
+    width: 50px;
+    height: 50px;
+    margin: 11px 12px 0px 16px;
+    border-radius: 50%;
+    position: absolu;
+}
+
+.percent-title{
+    width: 88px;
+    height: 60px;
+    margin-top: 11px;
+    margin-right: 12px;
+}
+
+.number-total{
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 36px;
+    color: #535261;
+}
+
+.name-service{
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 21px;
+    color: #FF7506;
+    margin-top: -8px;
+}
+
+.icon-service{
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 21px;
+    transform: translateY(20%);
+}
+
+.percent-note{
+    width: 157px;
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+}
+
+.note-percent-content{
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+}
+
+.name-note-content{
+    width: 99px;
+}
+
+.name-note{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 21px;
+    color: #7E7D88;
+}
+
+.icon-note{ 
+    font-size: 12px;
+    line-height: 21px;
+    color: #7E7D88;
+    margin-top: 7px;
+}
+
+.number-note{
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    color: #FF7506;
+    margin-top: 3px;
+}
+
+.coldevice1{
+    color: #FFD130;
+}
+
+.coldevice2{
+    color: #7E7D88;
+}
+
+.col1{
+    color: #FF7506;
+}

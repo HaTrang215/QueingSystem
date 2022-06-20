@@ -27,9 +27,7 @@
 }
 
 .row-button{
-    width: 100%;
-    margin-top: 32px;
-    justify-content: center;
+    text-align: center;
     display: flex;
     flex-direction: row;
 }
@@ -56,16 +54,15 @@
 .btn-cancel {
     text-align: center;
     text-decoration: none;
-    text-align: center;
     padding-top: 8px;
     margin-right: 24px;
+    margin-left: 118px;
 
     width: 162px;
     height: 40px;
 
     color: #FF9138;
     border: 1px solid #FF9138;
-    background-color: #FFFFFF;
 
     font-weight: 700;
     font-size: 16px;
@@ -106,7 +103,9 @@ input{
 }
 
 .warning-alert{
-    display: none;
+    margin-bottom: 24px;
+    justify-items: center;
+    display: block;
 }
 .link-before{
     font-weight: 400;
@@ -115,6 +114,7 @@ input{
 
     color: #E73F3F;
     margin-top: -4px;
+    margin-bottom: 19px;
     display: block;
 }
 .link-after{
@@ -124,7 +124,8 @@ input{
 
     color: #E73F3F;
     margin-top: -4px;
-    display: none;
+    display: block;
+    margin-left: 246px;
 }
 
 .btn-Login{
@@ -139,6 +140,26 @@ input{
     font-weight: 700;
     font-size: 16px;
     line-height: 24px;
+    text-align: center;
+   
+    color: #FFFFFF;
+    margin-bottom: 8px;
+    margin-left: 216px;
+}
+
+.btn-Continue{
+    width: 162px;
+    height: 40px;
+
+    background: #FF9138;
+
+    box-shadow: 0px 0px 6px #E7E9F2;
+    border-radius: 8px;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
    
     color: #FFFFFF;
 }

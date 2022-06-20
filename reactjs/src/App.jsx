@@ -25,13 +25,24 @@ import AccountManagement from "./pages/account_management";
 import AccountManagementAdd from "./pages/account_management_add";
 import AccountManagementUpdate from "./pages/account_management_update"
 import Diary from "./pages/diary"
+import UserInterface from "./pages/user"
+import DisplayKios from "./pages/display_kios"
+import DisplayCounter from "./pages/display_counter"
+import DisplayCenter from "./pages/display_center"
+import axios from "axios";
+
+axios.defaults.baseURL = "http://localhost:8000/";
+axios.defaults.headers.post['Content-Type'] = 'application/json';
+axios.defaults.headers.post['Accept'] = 'application/json';
+
+axios.defaults.withCredentials = true;
 
 function App() {
   return (
     <div className="App">
         <Routes>
           <Route path="/dashboard" element={<Dashboard/>}/>
-          <Route path="/login" element={<Login/>}/>
+          <Route exact path="/login" element={<Login/>}/>
           <Route path="/forget-password-1" element={<Forgetpassword1/>}/>
           <Route path="/forget-password-2" element={<Forgetpassword2/>}/>
           <Route path="/account" element={<Account/>}/>
@@ -55,6 +66,10 @@ function App() {
           <Route path="/account-management/add" element={<AccountManagementAdd />}/>
           <Route path="/account-management/update" element={<AccountManagementUpdate />}/>
           <Route path="/diary" element={<Diary/>}/>
+          <Route path="/user-interface" element={<UserInterface/>}/>
+          <Route path="/display-kios" element={<DisplayKios/>}/>
+          <Route path="/display-counter" element={<DisplayCounter/>}/>
+          <Route path="/display-center" element={<DisplayCenter/>}/>
         </Routes>
     </div>
   );
