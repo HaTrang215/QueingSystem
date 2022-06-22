@@ -10,11 +10,12 @@ function Select_dropdown(props) {
     
     return (
         <div className="dropdown">
+            <OutsideClickHandler onOutsideClick={()=>setActive(false)}>
             <div className="dropdown-btn" onClick={() => setActive(!isActive)}>
                 <label className="select">
                     {selected.label}
                 </label>
-                <OutsideClickHandler onOutsideClick={()=>setActive(false)}>
+                
                 {(isActive && <div className="dropdown-content">
                                     {
                                         options.map((option) =>(
@@ -26,8 +27,9 @@ function Select_dropdown(props) {
                                     
                                 </div>
                 )}
-                </OutsideClickHandler>
+                
             </div>
+            </OutsideClickHandler>
         </div>
     );
 }

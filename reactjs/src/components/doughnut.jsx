@@ -2,14 +2,15 @@ import React from 'react'
 import { Chart as ChartJS, registerables} from 'chart.js';
 import { Chart } from 'react-chartjs-2';
 
-const doughnut = () => {
+const doughnut = (props) => {
+    const {value} =props;
     ChartJS.register(...registerables);
     const data = ()=>{
         return{
             datasets: [{
-                data: [300, 50],
+                data: [value.v1, value.v2],
                 backgroundColor: [
-                  '#FF7506',
+                  value.c1,
                   '#EAEAEC',
                 ],
                 cutout: '90%',
