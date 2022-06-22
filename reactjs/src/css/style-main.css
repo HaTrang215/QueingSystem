@@ -8,6 +8,8 @@
 body{
     width: 100%;
     background: #ffffff;
+    width: 1440px;
+    height: 810px;
 }
 
 .container{
