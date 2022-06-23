@@ -32,6 +32,11 @@ body{
     width: 1240px;
 }
 
+.wrap-main{
+    display: flex;
+    flex-direction: row;
+}
+
 .main{
     width: 1240px;
     height: 706px;
@@ -39,10 +44,10 @@ body{
 
 .row-item1 {
     margin-top: 16px;
-    margin-left: 24px;
     width: 100%;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 /* dashboard */
 .name-page{
@@ -247,4 +252,112 @@ body{
     width: 100%;
     display: flex;
     flex-direction: row;
+}
+
+.wrap-table{
+    width: 1112px;
+    margin-left: 24px;
+}
+
+.row-item1-1{
+    display: flex;
+    flex-direction: row;
+}
+
+.col-item4{
+    width: 300px;
+    margin-right: 24px;
+}
+
+.col-item5{
+    width: 300px;
+}
+
+.content-table{
+    height: 490px;
+    width: 100%;
+}
+
+.content-table table{
+    width: 100%;
+    filter: drop-shadow(2px 2px 8px rgba(232, 239, 244, 0.8));
+    border-radius: 12px;
+    overflow: hidden;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.content-table tr th{
+    background: #FF9138;
+    padding: 12.5px 0px 12.5px 14px;
+    border: 1px solid #FFE3CD;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+
+    color: #FFFFFF;
+}
+
+.content-table tr th i{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+
+    color: #FFFFFF;
+    float: right;
+    margin-right: 19px;
+}
+
+.content-table tr td{
+    padding: 3.5px 0px 3.5px 14px;
+    border: 1px solid #FFF2E7;
+    height: 49px;   
+}
+
+.content-table tr:nth-child(even){
+    background-color:  #FFF2E7;
+}
+
+.point{
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    float: left;
+    margin-top: 8px;
+    margin-right: 4px;
+}
+
+.p-red{
+    background-color: #EC3740;
+}
+
+.p-green{
+    background-color: #34CD26;
+}
+.button-add{
+    width: 80px;
+    height: 94px;
+    text-align: center;
+    margin-top: 154px;
+    margin-left: 22px;
+    background: #FFF2E7;
+    box-shadow: 0px 0px 6px #E7E9F2;
+    border-radius: 8px 0px 0px 8px;
+    padding: 12px;
+}
+
+.icon-button{
+    font-size: 28px;
+}
+
+.button-add label{
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+    color: #FF7506;
+    
 }

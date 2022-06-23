@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, {useState} from 'react'
 import '../css/style-login.css';
-import Input1 from '../components/Input1';
+import Input1 from '../components/Input_login';
 import Panel from '../assets/images/Quên mật khẩu.png';
 import Logo from '../assets/images/Logo-alta-l.png';
 import { ExclamationCircle} from 'react-bootstrap-icons';

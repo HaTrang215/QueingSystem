@@ -10,6 +10,7 @@ import SelectDropdown from '../components/Select_dropdown'
 import LineChart from '../components/LineChart';
 import CirclePercent from '../components/Circle_percent_contain'
 
+
 const dashboard = () => {
   const inputs=[
     {

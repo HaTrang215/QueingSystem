@@ -8,6 +8,10 @@
     border-radius: 16px;
 }
 
+.wrap-login{
+    margin: 0px  0px 0px 94px;
+}
+
 .login-main{
     width: 592px;
     height: 100%;
@@ -22,7 +26,6 @@
 
 .row-item{
     width: 100%;
-    padding-left: 94px;
     margin-bottom: 16px;
 }
 

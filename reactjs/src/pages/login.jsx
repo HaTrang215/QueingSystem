@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, {useState} from 'react'
 import '../css/style-login.css';
-import Input1 from '../components/Input1';
+import Input1 from '../components/Input_login';
 import Panel from '../assets/images/Đăng nhập.png';
 import Logo from '../assets/images/Logo-alta-l.png';
 import { ExclamationCircle} from 'react-bootstrap-icons';
@@ -82,20 +82,20 @@ const login = () => {
         <div className="login-main">
             <img src={Logo} alt="" />
             <form method='POST' onSubmit={onSubmit}>
-                {inputs.map((input) =>(
-                    <Input1 
-                        key={input.id} 
-                        {...input} 
-                        value={values[input.name]}
-                        onChange= {onChange}
-                    />
-                ))}
-                
-                <div className="row-item">
-                    {
-                        (err === '')? <label><Link to='/forget-password-1' className='link-before'>Quên mật khẩu?</Link></label> : <label className='warning-alert' ><ExclamationCircle/>{err}</label>
-                    }
-                    
+                <div className="wrap-login">
+                    {inputs.map((input) =>(
+                        <Input1 
+                            key={input.id} 
+                            {...input} 
+                            value={values[input.name]}
+                            onChange= {onChange}
+                        />
+                    ))}
+                    <div className="row-item">
+                        {
+                            (err === '')? <label><Link to='/forget-password-1' className='link-before'>Quên mật khẩu?</Link></label> : <label className='warning-alert' ><ExclamationCircle/>{err}</label>
+                        }
+                    </div>
                 </div>
                 <div className="row-button">
                     <input 

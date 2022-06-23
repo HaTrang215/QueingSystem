@@ -1,10 +1,12 @@
-import React from 'react'
+import React, {useState} from 'react'
 import '../css/style-circle-percent.css'
 import {HiOutlineDesktopComputer} from 'react-icons/hi';
 import NotePercent from '../components/Note_percent'
 import {FaCommentsDollar, FaBuffer} from 'react-icons/fa';
 import Doughnut from './doughnut'
-import Calendar from './Calender_single'
+import Calendar from './Calender_picker';
+import moment from "moment"
+
 
 const Circle_percent_contain = () => {
     //equiment
@@ -119,6 +121,9 @@ const Circle_percent_contain = () => {
         c1: '#F178B6',
         v2: 3799,
     }
+
+    //Get date calendar
+    const [value , setValue]= useState(moment())
   return (
     <div>
         <div className="circle-percent-content">
@@ -191,7 +196,9 @@ const Circle_percent_contain = () => {
             </div>
         </div>
         <div className="calendar-container">
-            <Calendar/>
+            <div className="calendar-content">
+            <Calendar value= {value} setValue={setValue}/>
+            </div>
         </div>
     </div>
   )
