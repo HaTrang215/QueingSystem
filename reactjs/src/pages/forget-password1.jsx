@@ -60,6 +60,7 @@ const forget_password1 = () => {
             <div className="input-fiel">
                 <h2>Đặt lại mật khẩu</h2>
             </div>
+                <div className='wrap-login'>
                 {inputs.map((input) =>(
                     <Input1 
                         key={input.id} 
@@ -72,6 +73,7 @@ const forget_password1 = () => {
                     {
                         (err === '')? '' : <label className='warning-alert' ><ExclamationCircle/>{err}</label>
                     }
+                </div>
                 </div>
                 <div className="row-button">
                     <Link to="/login" className="btn-cancel">Huỷ</Link>

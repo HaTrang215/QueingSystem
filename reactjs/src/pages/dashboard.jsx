@@ -74,6 +74,7 @@ const dashboard = () => {
       <div className="content">
         <Topbar title1='' title2='' title3='Dashboard'/>
         <div className="main">
+          <div className="wrap-chart">
           <div className="row-item1">
             <label className='name-page'>Biểu đồ cấp số</label>
           </div>
@@ -105,6 +106,7 @@ const dashboard = () => {
                 </div>
               </div>
             </div>
+          </div>
           </div>
         </div>
         <div className="circle-percent-container">

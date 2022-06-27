@@ -8,7 +8,7 @@
 
 .select{
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 24px;
     color: #7E7D88;
 }
@@ -17,21 +17,44 @@
     position: absolute;
     top: 110%;
     left: 0;
+    max-height:154px;
     padding: 12px 0px;
     background: #fff;
     color: #7E7D88;
     width: 100%;
     border: 1.5px solid #D4D4D7;
     box-shadow: 0px 0px 6px #E7E9F2;
-    border-radius: 8px; 
+    border-radius: 8px;
+    z-index: 3; 
+    overflow: scroll ;
+    overflow-x: hidden;
+}
+
+.dropdown-content::-webkit-scrollbar{
+    width: 4px;
+}
+
+.dropdown-content::-webkit-scrollbar-track{
+    padding-right: 4px;
+}
+
+.dropdown-content::-webkit-scrollbar-thumb{
+    background: #FFC89B;
+    border-radius: 43px;
 }
 
 .dropdown-item{
     padding: 10px 0px 12px 10px;
     cursor: pointer;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
 }
 
 .dropdown-active{
     padding: 10px 0px 12px 10px;
     background: #FFF2E7;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
 }

@@ -48,8 +48,8 @@ function App() {
           <Route path="/account" element={<Account/>}/>
           <Route path="/equipment" element={<Equipment />}/>
           <Route path="/equipment/add" element={<EquipmentAdd />}/>
-          <Route path="/equipment/detail" element={<EquipmentDetail />}/>
-          <Route path="/equipment/update" element={<EquipmentUpdate />}/>
+          <Route path="/equipment/detail/:id" element={<EquipmentDetail />}/>
+          <Route path="/equipment/update/:id" element={<EquipmentUpdate />}/>
           <Route path="/service" element={<Service />}/>
           <Route path="/service/add" element={<ServiceAdd />}/>
           <Route path="/service/detail" element={<ServiceDetail />}/>

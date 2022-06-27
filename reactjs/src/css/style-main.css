@@ -42,6 +42,10 @@ body{
     height: 706px;
 }
 
+.wrap-chart{
+    width: 793px;
+    margin-left: 24px;
+}
 .row-item1 {
     margin-top: 16px;
     width: 100%;
@@ -287,7 +291,7 @@ body{
     text-align: left;
 }
 
-.content-table tr th{
+.content-table table tr th{
     background: #FF9138;
     padding: 12.5px 0px 12.5px 14px;
     border: 1px solid #FFE3CD;
@@ -295,11 +299,18 @@ body{
     font-weight: 700;
     font-size: 16px;
     line-height: 24px;
-
+ 
     color: #FFFFFF;
 }
 
-.content-table tr th i{
+.wrap-title-column{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+
+.content-table table tr th i{
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
@@ -310,14 +321,48 @@ body{
     margin-right: 19px;
 }
 
-.content-table tr td{
-    padding: 3.5px 0px 3.5px 14px;
+.content-table table tr td{
+    padding: 3.5px 0px 3.5px 8px;
     border: 1px solid #FFF2E7;
     height: 49px;   
 }
 
 .content-table tr:nth-child(even){
     background-color:  #FFF2E7;
+}
+
+.title-func{
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    text-decoration-line: underline;
+    color: #4277FF;
+    cursor: pointer;
+}
+
+.wrap-readmore{
+    height: 49px; 
+    overflow: scroll ;
+    overflow-x: hidden;
+}
+
+.wrap-readmore::-webkit-scrollbar{
+    width: 4px;
+}
+
+.wrap-readmore::-webkit-scrollbar-track{
+    padding-right: 4px;
+}
+
+.wrap-readmore::-webkit-scrollbar-thumb{
+    background: #FFC89B;
+    border-radius: 43px;
+}
+
+.title-text{
+    width: 234px;
 }
 
 .point{
@@ -330,12 +375,21 @@ body{
 }
 
 .p-red{
-    background-color: #EC3740;
+    background-color: #fc2a35;
 }
 
 .p-green{
     background-color: #34CD26;
 }
+
+.p-wait{
+    background-color: #4277FF;
+}
+
+.p-used{
+    background-color: #7E7D88;
+}
+
 .button-add{
     width: 80px;
     height: 94px;
@@ -360,4 +414,49 @@ body{
     text-align: center;
     color: #FF7506;
     
+}
+
+.button-add-block{
+    width: 80px;
+    height: 94px;
+    text-align: center;
+    margin-top: 154px;
+    margin-left: 22px;
+    background: #717a9273;
+    box-shadow: 0px 0px 6px #E7E9F2;
+    border-radius: 8px 0px 0px 8px;
+    padding: 12px;
+}
+.button-add-block label{
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+    color: #717a92;
+    
+}
+.btn-block{
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    text-decoration-line: underline;
+    color: #717a92;
+    cursor: pointer;
+}
+
+.col-item6{
+    width: 320px;
+    margin-right: 24px;
+}
+
+.col-item7{
+    width: 154px;
+    margin-right: 24px;
+}
+
+.col-item8{
+    width: 240px;
 }

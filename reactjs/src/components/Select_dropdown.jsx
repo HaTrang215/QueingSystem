@@ -35,15 +35,22 @@ function Select_dropdown(props) {
                 </label>
                 <OutsideClickHandler onOutsideClick={()=>setActive(false)}>
                 {(isActive && <div className="dropdown-content">
-                                    {
-                                        options.map((option) =>(
-                                            (selected.value === option.value)?
-                                            (<div className="dropdown-active" key={option.value.toString()}onClick={e => setSelected({value:option.value, label:option.label})}>{option.label}</div>) :
-                                            (<div className="dropdown-item" key={option.value.toString()} onClick={e => setSelected({value:option.value, label:option.label})}>{option.label}</div>)
-                                        ))
-                                    }                    
-                                    
-                                </div>
+                        {
+                            options.map((option) =>(
+                                (selected.value === option.value)?
+                                (<div className="dropdown-active" 
+                                    key={option.value.toString()}>
+                                   {option.label}
+                                </div>) :
+                                (<div className="dropdown-item" 
+                                    key={option.value.toString()} 
+                                    onClick={e => {setSelected({value:option.value, label:option.label})}}>
+                                    {option.label}
+                                </div>)
+                            ))
+                        }                    
+                        
+                    </div>
                 )}
                 </OutsideClickHandler>
             </SelectPicker>

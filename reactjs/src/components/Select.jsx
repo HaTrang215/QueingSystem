@@ -9,7 +9,12 @@ const Select = (props) => {
     <div className='select-wrap'>
         <label className="select-title">{title}</label>
         <div className="select-content">
-            <SelectDropdown selected={selected} setSelected={setSelected} keys={options.key} options={options} width={300}/>
+            <SelectDropdown 
+              selected={selected} 
+              setSelected={setSelected} 
+              keys={options.key} 
+              options={options} 
+              width={300}/>
         </div>
     </div>
   )

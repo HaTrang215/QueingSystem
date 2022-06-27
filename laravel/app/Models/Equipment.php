@@ -17,15 +17,15 @@ class Equipment extends Authenticatable
      *
      * @var array<int, string>
      */
+    protected $table = 'equipment';
     protected $fillable = [
         'id_equipment',
         'equipment_name',
         'address_IP',
         'status_active',
-        'status_connect',
         'id_type',
         'username',
-        'password',
+        'password'
     ];
 
     /**

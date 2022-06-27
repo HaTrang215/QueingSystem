@@ -8,6 +8,7 @@ use App\Models\Equipment;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Validator;
+use DB;
 
 class AuthController extends Controller
 {
@@ -23,7 +24,8 @@ class AuthController extends Controller
                 'messenger'=>'Mật khẩu và tên đăng nhập là bắt buộc'
             ]);
         }else{
-            $user = User::where('username', $req->username)->first();
+            $user = User::where('username', $req->username)
+                            ->first();
 
             if (! $user || ! Hash::check($req->password, $user->password)) {
                 if (isset($_SERVER)){
@@ -38,7 +40,7 @@ class AuthController extends Controller
                     }else{
                         $ip = $_SERVER["REMOTE_ADDR"];
                     }
-                    }else{
+                }else{
                     if(getenv('HTTP_X_FORWARDED_FOR')){
                         $ip = getenv('HTTP_X_FORWARDED_FOR');
                     if(strpos($ip,",")){
@@ -50,31 +52,52 @@ class AuthController extends Controller
                     }else {
                         $ip = getenv('REMOTE_ADDR');
                     }
-                    }
-                    $equipment = Equipment::where('username', $req->username)->where ('address_IP', $ip)->where('password',$req->password)->first();
-                    if(! $equipment){
+                }
+                    $equipment = DB::table('equipment')
+                                ->leftjoin ('users', 'equipment.id_user','=','users.id')
+                                ->where('users.username', $req->username)->where ('equipment.address_IP', $ip)->where('users.password',$req->password)
+                                ->select(['id_type','id_equipment'])
+                                ->get();
+                    $count = count($equipment);
+                    if($count!==1){
                         return response()->json([
                             'status'=>401,
-                            'messenger'=>'Sai mật khẩu hoặc tên đăng nhập'
+                            'messenger'=>'Sai mật khẩu, tên đăng nhập hoặc máy này không thể kết nối'
                         ]);
-                    }else{
+                    }else if($count === 1){
                         return response()->json([
                             'status'=>200,
                             'object'=> 1,
-                            'type'=>$equipment->id_type,
+                            'equipment'=>$equipment,
                             'messenger'=>'Đăng nhập thành công',
                         ]);
                     }
             }else{
-                $token = $user->createToken($user->email.'_Token')->plainTextToken;
+                if($user->status_login===0){
+                    $token = $user->createToken($user->email.'_Token')->plainTextToken;
+                    $update = User::find($user->id);
+                    if($update){
+                        $update->status_login = 1;
+                        $update->save();
+                        return response()->json([
+                            'status'=>200,
+                            'object'=> 0,
+                            'id'=>$user->id,
+                            'messenger'=>'Cập nhật thành công'
+                        ]);
+                    }else{
+                        return response()->json([
+                            'status'=>401,
+                            'messenger'=>'Cập nhật trạng thái không thành công'
+                        ]);
+                    }
+                }else{
+                    return response()->json([
+                        'status'=>401,
+                        'messenger'=>'Người dùng này đã đăng nhập.'
+                    ]);
+                }
 
-                return response()->json([
-                    'status'=>200,
-                    'object'=> 0,
-                    'username'=>$user->username,
-                    'token'=>$token,
-                    'messenger'=>'Login successfully'
-                ]);
             }
         }
     }

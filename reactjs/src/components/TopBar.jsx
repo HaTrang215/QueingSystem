@@ -1,11 +1,13 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import '../css/style-topbar.css'
 import {MdOutlineNavigateNext} from 'react-icons/md';
 import {FaBell} from 'react-icons/fa'
-import Avatar from '../assets/images/hình nền.png'
+import Avatar from '../assets/avatar/hình nền.png'
 import NotificationBox from '../components/Notification_box'
 import OutsideClickHandler from 'react-outside-click-handler';
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+
 
 const TopBar = (props) => {
 
@@ -15,6 +17,26 @@ const TopBar = (props) => {
     const handleBellClick = () =>{
         setNotice(!notice)
     }
+    
+    const [name, setName]=useState('')
+
+    useEffect(()=>{
+        const id = localStorage.getItem('id_user')
+        const data={
+            id: id,
+          }
+          axios.get('/sanctum/csrf-cookie').then(response => {
+            axios.post('/api/loaduser', data)
+            .then(res =>{
+                if(res.data.status === 200){
+                    setName(res.data.user.name)
+                }else {
+                    console.log(res.data.messenger);
+                }
+            });
+        });
+    });
+
     const Navigate = useNavigate()
     const accoount = ()=>{ Navigate('/account')}
   return (
@@ -46,7 +68,7 @@ const TopBar = (props) => {
             <img src={ Avatar} alt="avata" className="avatar"/>
             <div className="text-account" onClick={accoount}>
                 <p className="greeting">Xin chào</p>
-                <p className="name-user">Lê Quỳnh Ái Vân</p>
+                <p className="name-user">{name}</p>
             </div>
         </div>
     </div>

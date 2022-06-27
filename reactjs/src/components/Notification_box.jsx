@@ -32,6 +32,31 @@ const Notification_box = () => {
               <p className="notic-content">Thời gian nhận số: 12h20 ngày 30/11/2021</p>
           </div>
           <div className="seperate"></div>
+          <div className="notic-item" onClick={detaiNumber}>
+              <p className="notic-name">Người dùng: Nguyễn Thị Thuỳ Dung</p>
+              <p className="notic-content">Thời gian nhận số: 12h20 ngày 30/11/2021</p>
+          </div>
+          <div className="seperate"></div>
+          <div className="notic-item" onClick={detaiNumber}>
+              <p className="notic-name">Người dùng: Nguyễn Thị Thuỳ Dung</p>
+              <p className="notic-content">Thời gian nhận số: 12h20 ngày 30/11/2021</p>
+          </div>
+          <div className="seperate"></div>
+          <div className="notic-item" onClick={detaiNumber}>
+              <p className="notic-name">Người dùng: Nguyễn Thị Thuỳ Dung</p>
+              <p className="notic-content">Thời gian nhận số: 12h20 ngày 30/11/2021</p>
+          </div>
+          <div className="seperate"></div>
+          <div className="notic-item" onClick={detaiNumber}>
+              <p className="notic-name">Người dùng: Nguyễn Thị Thuỳ Dung</p>
+              <p className="notic-content">Thời gian nhận số: 12h20 ngày 30/11/2021</p>
+          </div>
+          <div className="seperate"></div>
+          <div className="notic-item" onClick={detaiNumber}>
+              <p className="notic-name">Người dùng: Nguyễn Thị Thuỳ Dung</p>
+              <p className="notic-content">Thời gian nhận số: 12h20 ngày 30/11/2021</p>
+          </div>
+          <div className="seperate"></div>
       </div>
     </div>
   )

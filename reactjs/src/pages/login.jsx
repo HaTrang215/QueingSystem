@@ -56,13 +56,15 @@ const login = () => {
                     if(res.data.object === 0){
                         localStorage.setItem('auth_token', res.data.token);
                         localStorage.setItem('auth_name', res.data.username);
+                        localStorage.setItem('id_user', res.data.id);
+                        localStorage.setItem('id_equipment', res.data.id_equipment);
                         history("/dashboard",{ replace: true });
                     }else{
-                        if(res.data.type === 1){
+                        if(res.data.id_type === 1){
                             history("/display-kios",{ replace: true });
-                        }else if(res.data.type === 2){
+                        }else if(res.data.id_type === 2){
                             history("/display-counter",{ replace: true });
-                        }else if(res.data.type === 3){
+                        }else if(res.data.id_type === 3){
                             history("/display-center",{ replace: true });
                         }else{
                             history("/user-interface",{ replace: true });
