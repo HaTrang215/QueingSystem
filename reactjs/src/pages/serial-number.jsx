@@ -66,17 +66,16 @@ const serial_number = () => {
           setLoading(false)
       }); 
   },[]);
-  const [selected1, setSelected1] = useState({value: 'Tất cả', label: 'Tất cả'})
+  const [selected1, setSelected1] = useState({value: 'all', label: 'Tất cả'})
 
-  const [selected2, setSelected2] = useState({value: 3, label: 'Tất cả'})
+  const [selected2, setSelected2] = useState({value: 'all', label: 'Tất cả'})
   const options2 = [
-    { value: 3, label: 'Tất cả' },
     { value: 0, label: 'Đang chờ' },
     { value: 1, label: 'Đã sử dụng'},
     { value: 2, label: 'Bỏ qua'}
   ]
 
-  const [selected3, setSelected3] = useState({value: 'Tất cả', label: 'Tất cả'})
+  const [selected3, setSelected3] = useState({value: 'all', label: 'Tất cả'})
 
   
 
@@ -101,34 +100,34 @@ const onChange = (e) =>{
 }
   const filterActive = ()=>{
     if (values.searchContent===''){
-      if (selected1.value === 'Tất cả' &&  selected2.value===3 && selected3.value==='Tất cả'){
+      if (selected1.value === 'all' &&  selected2.value==='all' && selected3.value==='all'){
         const filterActive = posts.filter(
           (p)=> p.start_date >= begindate 
                 && p.start_date<= enddate
         );
         return (filterActive)
-      }else if(selected1.value !== 'Tất cả'&&  selected2.value===3 && selected3.value==='Tất cả'){
+      }else if(selected1.value !== 'all'&&  selected2.value==='all' && selected3.value==='all'){
         const filterActive = posts.filter(
           (p)=> p.service_name=== selected1.value
                 && p.start_date >= begindate 
                 && p.start_date<= enddate
         );
         return (filterActive);
-      }else if(selected1.value === 'Tất cả'&&  selected2.value!==3 && selected3.value==='Tất cả'){
+      }else if(selected1.value === 'all'&&  selected2.value!=='all' && selected3.value==='all'){
         const filterActive = posts.filter(
           (p)=> p.status_active === selected2.value
                 && p.start_date >= begindate 
                 && p.start_date<= enddate
         );
         return (filterActive);
-      }else if(selected1.value === 'Tất cả'&&  selected2.value===3 && selected3.value!=='Tất cả'){
+      }else if(selected1.value === 'all'&&  selected2.value==='all' && selected3.value!=='all'){
         const filterActive = posts.filter(
           (p)=> p.type_name_vi===selected3.value
                 && p.start_date >= begindate 
                 && p.start_date<= enddate
         );
         return (filterActive);
-      }else if(selected1.value !== 'Tất cả'&&  selected2.value!==3 && selected3.value==='Tất cả'){
+      }else if(selected1.value !== 'all'&&  selected2.value!=='all' && selected3.value==='all'){
         const filterActive = posts.filter(
           (p)=> p.service_name=== selected1.value
                 &&p.status_active === selected2.value
@@ -136,7 +135,7 @@ const onChange = (e) =>{
                 && p.start_date<= enddate
         );
         return (filterActive);
-      }else if(selected1.value === 'Tất cả'&&  selected2.value!==3 && selected3.value!=='Tất cả'){
+      }else if(selected1.value === 'all'&&  selected2.value!=='all' && selected3.value!=='all'){
         const filterActive = posts.filter(
           (p)=> p.status_active === selected2.value
                 && p.type_name_vi===selected3.value
@@ -144,7 +143,7 @@ const onChange = (e) =>{
                 && p.start_date<= enddate
         );
         return (filterActive);
-      }else if(selected1.value !== 'Tất cả'&&  selected2.value===3 && selected3.value!=='Tất cả'){
+      }else if(selected1.value !== 'all'&&  selected2.value==='all' && selected3.value!=='all'){
         const filterActive = posts.filter(
           (p)=> p.service_name=== selected1.value
                 && p.type_name_vi===selected3.value
@@ -272,7 +271,7 @@ const currPosts = filterData.slice(firstPost,endPost);
         <div 
             className={(auth === '111' || auth === '321' || auth === '421'|| auth === '631')? "button-add": "button-add-block"}
             onClick={(auth === '111' || auth === '321' || auth === '421'|| auth === '631')? ()=>Navigate(url+'/add'): ()=>''}>
-            <label><AiFillPlusSquare className='icon-button'/><br/>Thêm dịch vụ</label>
+            <label><AiFillPlusSquare className='icon-button'/><br/>Cấp số mới</label>
         </div>
         </div>
       </div>

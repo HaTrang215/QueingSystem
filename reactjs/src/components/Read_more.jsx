@@ -9,7 +9,7 @@ const Read_more = ({children}) => {
     <div className='wrap-readmore'>
       <OutsideClickHandler onOutsideClick={()=>setIsReadMore(true)}>
       <p className='title-text'>
-          <span>{(isReadMore) ? text.slice(0,28) : text} ...</span><br/>
+          <span>{(isReadMore) ? text.slice(0,28) : text}</span><br/>
           <span onClick={()=>setIsReadMore(!isReadMore)} className='title-func'>
           {(isReadMore) ? 'Xem thêm' : ''}
           </span>

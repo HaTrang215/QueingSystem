@@ -9,8 +9,12 @@ use App\Http\Controllers\api\EquipmentController;
 use App\Http\Controllers\api\ServiceController;
 use App\Http\Controllers\api\SerialNumberController;
 use App\Http\Controllers\api\TypeEquipmentController;
+use App\Http\Controllers\api\RoleController;
+use App\Http\Controllers\api\AccountController;
+use App\Http\Controllers\api\DiaryController;
 
 Route::post('login', [AuthController::class, 'login']);
+Route::post('logout', [AuthController::class, 'logout']);
 
 Route::post('forgetpassword', [AuthController::class, 'forgetpassword']);
 
@@ -29,6 +33,14 @@ Route::get('list-service', [ServiceController::class, 'index']);
 //Serial-number
 Route::get('list-serial-number', [SerialNumberController::class, 'index']);
 
+//Role-management
+Route::get('list-role-management', [RoleController::class, 'index']);
+
+//Account-management
+Route::get('list-account-managerment', [AccountController::class, 'index']);
+
+//Dỉay
+Route::get('diary', [DiaryController::class, 'index']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

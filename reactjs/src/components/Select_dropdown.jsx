@@ -35,6 +35,9 @@ function Select_dropdown(props) {
                 </label>
                 <OutsideClickHandler onOutsideClick={()=>setActive(false)}>
                 {(isActive && <div className="dropdown-content">
+                            <div 
+                                className={(selected.value === 'all' )? "dropdown-active":"dropdown-item" }
+                                onClick={(e)=>setSelected({value:'all', label:"Tất cả"})}>Tất cả</div>
                         {
                             options.map((option) =>(
                                 (selected.value === option.value)?

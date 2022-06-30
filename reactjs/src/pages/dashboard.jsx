@@ -12,6 +12,8 @@ import CirclePercent from '../components/Circle_percent_contain'
 
 
 const dashboard = () => {
+
+
   const inputs=[
     {
       id: 1,
@@ -67,6 +69,21 @@ const dashboard = () => {
     },
   ]
 
+  const [equipment, setEquipment]=useState({
+    danghoatdong: 3799,
+    ngunghoatdong:422
+  })
+
+  const [service, setService]=useState({
+    danghoatdong: 210,
+    ngunghoatdong:66
+  })
+
+  const [number, setNumber]=useState({
+    dangcho: 3721,
+    dasudung:486,
+    boqua:32,
+  })
 
   return (
     <div className="container">
@@ -113,7 +130,11 @@ const dashboard = () => {
             <div className="row-item4">
             <label className='name-page'>Tổng quan</label>
             </div>
-            <CirclePercent/>
+            <CirclePercent
+              equipment={equipment}
+              service={service}
+              number={number}
+            />
         </div>
       </div>
     </div>

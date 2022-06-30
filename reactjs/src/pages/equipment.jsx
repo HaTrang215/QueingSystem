@@ -64,17 +64,15 @@ const equipment = () => {
       }); 
   },[]);
 
-  const [selected1, setSelected1] = useState({value: 2, label: 'Tất cả'})
+  const [selected1, setSelected1] = useState({value: 'all', label: 'Tất cả'})
   const options1 = [
-    { value: 2, label: 'Tất cả' },
     { value: 1, label: 'Hoạt động' },
     { value: 0, label: 'Ngưng hoạt động' }
   ]
 
     
-  const [selected2, setSelected2] = useState({value: 2, label: 'Tất cả'})
+  const [selected2, setSelected2] = useState({value: 'all', label: 'Tất cả'})
   const options2 = [
-    { value: 2, label: 'Tất cả' },
     { value: 1, label: 'Kết nối' },
     { value: 0, label: 'Mất kết nối' }
   ]
@@ -100,14 +98,14 @@ const onChange = (e) =>{
 }
   const filterActive = ()=>{
     if (values.searchContent===''){
-      if (selected1.value===2 && selected2.value===2 ){
+      if (selected1.value==='all' && selected2.value==='all' ){
         return posts;
-      }else if(selected1.value===2 && selected2.value!==2 ){
+      }else if(selected1.value==='all' && selected2.value!=='all' ){
         const filterActive = posts.filter(
           (p)=> p.status_connect === selected2.value
         );
         return (filterActive)
-      }else if(selected1.value!==2 && selected2.value===2 ){
+      }else if(selected1.value!=='all' && selected2.value==='all' ){
         const filterActive = posts.filter(
           (p)=> p.status_active === selected1.value
         );

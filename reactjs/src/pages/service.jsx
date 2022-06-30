@@ -68,9 +68,8 @@ const service = () => {
       }); 
   },[]);
 
-  const [selected1, setSelected1] = useState({value: 2, label: 'Tất cả'})
+  const [selected1, setSelected1] = useState({value: 'all', label: 'Tất cả'})
   const options1 = [
-    { value: 2, label: 'Tất cả' },
     { value: 1, label: 'Hoạt động' },
     { value: 0, label: 'Ngưng hoạt động' }
   ]
@@ -96,7 +95,7 @@ const onChange = (e) =>{
 }
   const filterActive = ()=>{
     if(values.searchContent===''){
-      if (selected1.value===2){
+      if (selected1.value==='all'){
         const filterActive = posts.filter(
           (p)=>  p.create_date >= begindate && p.create_date<= enddate
         );

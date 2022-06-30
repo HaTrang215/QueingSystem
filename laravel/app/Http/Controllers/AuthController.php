@@ -24,8 +24,7 @@ class AuthController extends Controller
                 'messenger'=>'Mật khẩu và tên đăng nhập là bắt buộc'
             ]);
         }else{
-            $user = User::where('username', $req->username)
-                            ->first();
+            $user = User::where('username', $req->username)->first();
 
             if (! $user || ! Hash::check($req->password, $user->password)) {
                 if (isset($_SERVER)){
@@ -126,6 +125,23 @@ class AuthController extends Controller
                     'messenger'=>'Thành công',
                 ]);
             }
+        }
+    }
+
+    public function logout(Request $req){
+        $user = User::find($req->id);
+        if($user){
+            $user->status_login = 0;
+            $user->save();
+            return response()->json([
+                'status'=>200,
+                'messenger'=>'Cập nhật thành công'
+            ]);
+        }else{
+            return response()->json([
+                'status'=>401,
+                'messenger'=>'Cập nhật trạng thái không thành công'
+            ]);
         }
     }
 

@@ -7,6 +7,7 @@ import {HiOutlineDesktopComputer} from 'react-icons/hi';
 import {FaCommentsDollar, FaBuffer, FaEllipsisV} from 'react-icons/fa';
 import {RiFileChartLine, RiSettingsLine} from 'react-icons/ri';
 import {FiLogOut} from 'react-icons/fi'
+import axios from "axios";
 // import SubMenu from '../components/Sub_menu'
 import OutsideClickHandler from 'react-outside-click-handler';
 
@@ -23,6 +24,22 @@ const GroupNavbar = (props) => {
     const management1 = ()=>{ Navigate('/role-management')}
     const management2 = ()=>{ Navigate('/account-management')}
     const diary = ()=>{ Navigate('/diary')}
+    const id = localStorage.getItem('id_user')
+
+
+    const onClickLogout=(e)=>{
+        const data={
+            id: id
+        }
+        axios.post('/api/logout', data)
+      .then(res =>{
+          if(res.data.status === 200){
+            localStorage.removeItem('id_equipment', res.data.id_equipment);
+            Navigate("/login",{ replace: true });
+          }else {
+          }
+      });
+    }
     
   return (
     
@@ -81,7 +98,7 @@ const GroupNavbar = (props) => {
             </OutsideClickHandler>              
         </div>
         <div className="logout-content">
-            <button className='btn-logout'><FiLogOut className='icon'/>Đăng xuất</button>
+            <button className='btn-logout' onClick={onClickLogout}><FiLogOut className='icon'/>Đăng xuất</button>
         </div>
     </div>
   )

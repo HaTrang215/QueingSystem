@@ -14,6 +14,7 @@ class SerialNumberController extends Controller
     public function index(){
         $serial_number=DB::table('number_supply')
                             ->leftjoin ('service', 'number_supply.id_service','=','service.id_service')
+                            ->orderBy('start_date', 'DESC')
                             ->get();
         $type_equipment=DB::table('equipment')
                             ->leftjoin ('type_equipment', 'type_equipment.id_type','=','equipment.id_type')
