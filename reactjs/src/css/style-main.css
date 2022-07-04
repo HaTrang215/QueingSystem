@@ -472,3 +472,152 @@ body{
     width: 600px;
     margin-right: -260px;
 }
+
+.content .panel-account{
+    display: flex;
+    flex-direction: row;
+    background: #ffffff;
+    width: 1112px;
+    height: 397px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 6px rgba(219, 219, 219, 0.5);
+    border-radius: 12px;
+    margin: 80px 0px 0px 24px;
+}
+
+.content .panel-account .col-item-1{
+    width: 284px;
+    top: 40px;
+}
+
+.content .panel-account .col-item-1 .img-avarta{
+    width: 248px;
+    height: 248px;
+    margin: 40px 12px 0px 24px;
+    border-radius: 318px;
+}
+
+.content .panel-account .col-item-1 .btn-upload-photo{
+    position: absolute;
+    background: #FF7506;
+    border: 2px solid #FFFFFF;
+    border-radius: 23px;
+    width: 45px;
+    height: 45px;
+    margin-top: 246px;
+    margin-left: -101px;
+    color: #ffffff;
+    padding: 8px;
+    font-size: 14px;
+}
+
+
+.content .panel-account .col-item-1 .name-avatar{
+    width: 100%;
+    margin-top: 19px;
+    text-align: center;
+}
+
+.content .panel-account .col-item-1 .name-avatar p{
+    color: #282739;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+}
+
+.content .panel-account .col-item-2{
+    width: 384px;
+    margin: 32px 12px 0px 12px;
+}
+
+.content .panel-account .col-item-2 .row-item {
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.content .panel-account .col-item-2 .row-item p{
+    color: #282739;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 0px 0px 8px 0px;
+}
+
+.content .panel-account .col-item-2 .row-item input{
+    width: 384px;
+    height: 44px;
+    border-radius: 6px;
+    padding-left: 16px;
+}
+
+/*Add*/
+.main .background-content{
+    width: 1152px;
+    height: 550px;
+    background: #FFFFFF;
+    box-shadow: 2px 2px 8px rgba(232, 239, 244, 0.8);
+    border-radius: 16px;
+}
+.main .add-content .row-item3{
+    margin-top: 16px;
+}
+
+.main .add-content .row-item4 .add-title{
+    color: #282739;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.main .add-content .row-item4 input{
+    width: 1104px;
+    height: 44px;
+    padding: 10px 270px 10px 12px;
+    border: 1.5px solid #D4D4D7;
+    border-radius: 8px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+    color: #A9A9B0;
+}
+
+.stress{
+    color: #FF4747;
+    font-size: 8px;
+    transform: scaleY(100%);
+}
+
+.main .row-item1 .add-button{
+    margin-left: 434.5px;
+}
+
+.main .row-item1 .add-button .btn-cancel{
+    width: 147px;
+    height: 48px;
+    background: #FFF2E7;
+    border: 1.5px solid #FF9138;
+    box-shadow: 0px 0px 6px #E7E9F2;
+    border-radius: 8px;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    color: #FF9138;
+    margin-right: 32px;
+}
+
+.main .row-item1 .add-button .btn-add{
+    width: 147px;
+    height: 48px;
+    background: #FF9138;
+    box-shadow: 0px 0px 6px #E7E9F2;
+    border-radius: 8px;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    color: #ffffff;
+    margin-right: 32px;
+}

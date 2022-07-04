@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ResetController;
 use App\Http\Controllers\api\UserController;
+use App\Http\Controllers\api\DashboardController;
 use App\Http\Controllers\api\EquipmentController;
 use App\Http\Controllers\api\ServiceController;
 use App\Http\Controllers\api\SerialNumberController;
@@ -23,6 +24,13 @@ Route::post('resetpassword', [ResetController::class, 'resetpassword']);
 Route::post('loaduser', [UserController::class, 'loaduser']);
 
 Route::post('auth', [UserController::class, 'auth']);
+
+//Account
+Route::post('account', [UserController::class, 'account']);
+Route::post('upload-image', [UserController::class, 'uploadimg']);
+
+//Dashboard
+Route::get('dashboard', [DashboardController::class, 'index']);
 
 //Equipment
 Route::get('list-equipment', [EquipmentController::class, 'index']);

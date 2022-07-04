@@ -1,18 +1,32 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import '../css/style-main.css'
 import GroupNavbar from '../components/GroupNavbar'
 import Topbar from '../components/TopBar';
 import {BsCalendar, BsCalendarCheck, BsBookmarkStar} from 'react-icons/bs';
 import {MdOutlineContactPhone} from 'react-icons/md'
 import BoxNumber from '../components/Box_number';
-import SelectDropdown from '../components/Select_dropdown'
+import SelectDropdown from '../components/select_dashboard'
 import LineChart from '../components/LineChart';
-import CirclePercent from '../components/Circle_percent_contain'
+// import CirclePercent from '../components/Circle_percent_contain'
+import axios from "axios";
 
 
 const dashboard = () => {
+  const [equipment, setEquipmqent]=useState([])
+  const [service, setService]=useState([])
+  const [number, setNumber]=useState([])
 
+  useEffect(()=>{
+    axios.get('/api/list-equipment')
+    .then(res =>{
+      if(res.data.status === 200){
+        setEquipmqent(res.data.equipment);
+        setService(res.data.service);
+        setNumber(res.data.number)
+      }  
+    }); 
+  },[]);
 
   const inputs=[
     {
@@ -68,23 +82,6 @@ const dashboard = () => {
       y: 1998,
     },
   ]
-
-  const [equipment, setEquipment]=useState({
-    danghoatdong: 3799,
-    ngunghoatdong:422
-  })
-
-  const [service, setService]=useState({
-    danghoatdong: 210,
-    ngunghoatdong:66
-  })
-
-  const [number, setNumber]=useState({
-    dangcho: 3721,
-    dasudung:486,
-    boqua:32,
-  })
-
   return (
     <div className="container">
       <GroupNavbar content='dashboard'/>
@@ -130,11 +127,11 @@ const dashboard = () => {
             <div className="row-item4">
             <label className='name-page'>Tổng quan</label>
             </div>
-            <CirclePercent
+            {/* <CirclePercent
               equipment={equipment}
               service={service}
               number={number}
-            />
+            /> */}
         </div>
       </div>
     </div>

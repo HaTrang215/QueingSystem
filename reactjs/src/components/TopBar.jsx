@@ -22,6 +22,7 @@ const TopBar = (props) => {
 
     useEffect(()=>{
         const id = localStorage.getItem('id_user')
+        // console.log(id)
         const data={
             id: id,
           }
@@ -30,6 +31,7 @@ const TopBar = (props) => {
             .then(res =>{
                 if(res.data.status === 200){
                     setName(res.data.user.name)
+                    console.log(res.data.status)
                 }else {
                     console.log(res.data.messenger);
                 }
