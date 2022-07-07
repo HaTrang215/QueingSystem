@@ -13,11 +13,11 @@ class DiaryController extends Controller
     public function index(){
         $diary=DB::table('diary')
                 ->leftjoin("users","users.id","=","diary.id_user" )
-                ->leftjoin("equipment", "equipment.id_equipment", "=", "diary.id_equipment")
-                ->orderBy('perform_date', 'DESC')
+                ->orderBy('id_diary', 'DESC')
                 ->get();
         $minDate=DB::table("diary")
                 ->min("perform_date");
+        $count=count($diary);
         foreach($diary as $d){
             $d->time=date("H:i", strtotime($d->perform_time));
             $d->date=date("d/m/Y", strtotime($d->perform_date));
@@ -25,7 +25,8 @@ class DiaryController extends Controller
         return response()->json([
             'status'=> 200,
             'diary'=>$diary,
-            "minDate"=>$minDate
+            "minDate"=>$minDate,
+            'count'=>$count
         ]);
     }
 }

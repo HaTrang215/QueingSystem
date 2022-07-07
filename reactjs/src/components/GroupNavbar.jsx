@@ -34,8 +34,8 @@ const GroupNavbar = (props) => {
         axios.post('/api/logout', data)
       .then(res =>{
           if(res.data.status === 200){
-            localStorage.removeItem('id_equipment', res.data.id_equipment);
-            Navigate("/login",{ replace: true });
+            localStorage.removeItem('id_user', id);
+            Navigate("/login");
           }else {
           }
       });

@@ -60,6 +60,26 @@ const report = () => {
     { value: 1, label: 'Hoạt động' },
     { value: 0, label: 'Ngưng hoạt động' }
   ]
+  const [selected2, setSelected2] = useState({value: 0, label: 'Tất cả'})
+  const options2 = [
+    { value: 2, label: 'Tất cả' },
+    { value: 1, label: 'Hoạt động' },
+    { value: 0, label: 'Ngưng hoạt động' }
+  ]
+
+  const [selected3, setSelected3] = useState({value: 0, label: 'Tất cả'})
+  const options3 = [
+    { value: 2, label: 'Tất cả' },
+    { value: 1, label: 'Hoạt động' },
+    { value: 0, label: 'Ngưng hoạt động' }
+  ]
+
+  const [selected4, setSelected4] = useState({value: 0, label: 'Tất cả'})
+  const options4 = [
+    { value: 2, label: 'Tất cả' },
+    { value: 1, label: 'Hoạt động' },
+    { value: 0, label: 'Ngưng hoạt động' }
+  ]
   
   const filterActive = ()=>{
     return posts;
@@ -115,7 +135,7 @@ const currPosts = filterData.slice(firstPost,endPost);
                         <OutsideClickHandler onOutsideClick={()=>setActive2(false)}>
                         <TiArrowUnsorted onClick={()=>setActive1(!isActive2)}/>
                         {
-                          (isActive1)?<Dropdown selected={selected1} setSelected={setSlected1} options={options1}/>:""
+                          (isActive1)?<Dropdown selected={selected2} setSelected={setSelected2} options={options1}/>:""
                         }
                         </OutsideClickHandler>
                     </div>
@@ -126,7 +146,7 @@ const currPosts = filterData.slice(firstPost,endPost);
                       <OutsideClickHandler onOutsideClick={()=>setActive3(false)}>
                       <TiArrowUnsorted onClick={()=>setActive1(!isActive3)}/>
                         {
-                          (isActive1)?<Dropdown selected={selected1} setSelected={setSlected1} options={options1}/>:""
+                          (isActive1)?<Dropdown selected={selected3} setSelected={setSelected3} options={options1}/>:""
                         }
                       </OutsideClickHandler>
                     </div>
@@ -135,9 +155,9 @@ const currPosts = filterData.slice(firstPost,endPost);
                     <div className="wrap-title-column">
                     Tình trạng
                       <OutsideClickHandler onOutsideClick={()=>setActive4(false)}>
-                      <TiArrowUnsorted onClick={()=>setActive1(!isActive1)}/>
+                      <TiArrowUnsorted onClick={()=>setActive1(!isActive4)}/>
                         {
-                          (isActive1)?<Dropdown selected={selected1} setSelected={setSlected1} options={options1}/>:""
+                          (isActive4)?<Dropdown selected={selected4} setSelected={setSelected4} options={options1}/>:""
                         }
                       </OutsideClickHandler>
                     </div>

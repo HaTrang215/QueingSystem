@@ -13,6 +13,7 @@ const Input1 = (props) => {
     <div className="row-item">
         <p>{label}</p>
         <input
+            className='input-login'
             type={(type === 'password')? ((passwordEye === false)? 'password' : 'text') : type}
             {...inputProps}
             onChange = {onChange}

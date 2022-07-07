@@ -53,12 +53,13 @@ const account_management = () => {
           if(res.data.status === 200){
             setPosts(res.data.account);
             setOptions1(res.data.role);
-            const row = filterData.length;
-            if (row > 0){
-              setTotalRow(posts.length);
-            }else{
-              setTotalRow(1);
-            }
+            setTotalRow(res.data.count);
+            // const row = filterData.length;
+            // if (row > 0){
+            //   setTotalRow(posts.length);
+            // }else{
+            //   setTotalRow(1);
+            // }
           }
           setLoading(false)
       }); 

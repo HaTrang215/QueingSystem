@@ -256,10 +256,9 @@ const currPosts = filterData.slice(firstPost,endPost);
                     <th >Trạng thái</th> 
                     <th >Nguồn cấp</th>
                     <th></th>
-                    <th></th>
                 </tr>
             </thead>
-                <Posts posts={currPosts} auth={auth} />
+                <Posts posts={currPosts} auth={auth} url={url}/>
         </table>}
               </div>
             </div>

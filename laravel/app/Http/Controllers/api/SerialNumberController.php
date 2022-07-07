@@ -42,4 +42,29 @@ class SerialNumberController extends Controller
             'service'=>$service,
         ]);
     }
+
+    public function detail($id){
+        $number= DB::table('number_supply')
+                    ->where('id_number_supply', '=', $id)
+                    ->leftjoin('service', 'service.id_service', '=', 'number_supply.id_service')
+                    ->leftjoin('equipment', 'number_supply.id_equipment', '=', 'equipment.id_equipment')
+                    ->get();
+        if($number){
+            foreach ($number as $val) {
+                $val->startdate=date("d/m/Y", strtotime($val->start_date));
+                $val->expirydate=date("d/m/Y", strtotime($val->expiry_date));
+                $val->starttime=date("H:i", strtotime($val->start_time));
+                $val->expirytime=date("H:i", strtotime($val->expiry_time));
+            }
+            return response()->json([
+                'status'=> 200,
+                'number'=>$number,
+            ]);
+        }else{
+            return response()->json([
+                'status'=>404,
+                'messenger'=>'Số được cấp không tồn tại'
+            ]);
+        }
+    }
 }

@@ -20,14 +20,14 @@ import moment from "moment"
 const service = () => {
   const Navigate = useNavigate();
   const groupFunction = 'service';
-  const url = '/'+groupFunction;
+  const url = '/'+groupFunction
   //phân quyền
   const id = localStorage.getItem('id_user')
   const [loading, setLoading] = useState(true)
   const [auth, setAuth] = useState('')
   const [posts, setPosts] =useState([])
   const [currPage, setCurrPage] = useState(1);
-  const postPerPage=9;
+  const postPerPage=8;
   const [totalRow, setTotalRow] = useState(1);
 
   const [begindate, setBegindate] = useState(moment().subtract(1,"day").format("YYYY-MM-DD"))
@@ -55,14 +55,14 @@ const service = () => {
       .then(res =>{
           if(res.data.status === 200){
             setPosts(res.data.service);
-            setTotalRow(res.data.count);
+            setTotalRow(res.data.num);
             setBegindate(res.data.mindate)
-            const row = filterData.length;
-            if (row > 0){
-              setTotalRow(posts.length);
-            }else{
-              setTotalRow(1);
-            }
+            // const row = filterData.length;
+            // if (row > 0){
+            //   setTotalRow(posts.length);
+            // }else{
+            //   setTotalRow(1);
+            // }
           }
           setLoading(false)
       }); 
@@ -121,7 +121,7 @@ var filterData= useMemo(filterActive, [selected1,begindate, enddate, values.sear
 function onPageChange (newPage){
   setCurrPage(newPage);
 }
-
+// console.log(filterData)
 const endPost = currPage*postPerPage;
 const firstPost = endPost - postPerPage;
 const currPosts = filterData.slice(firstPost,endPost);
@@ -178,7 +178,7 @@ const currPosts = filterData.slice(firstPost,endPost);
                     <th ></th> 
                 </tr>
             </thead>
-                <Posts posts={currPosts} auth={auth} />
+                <Posts posts={currPosts} auth={auth} url={url}/>
         </table>}
               </div>
             </div>

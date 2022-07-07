@@ -28,7 +28,7 @@ const equipment = () => {
   const [auth, setAuth] = useState('')
   const [posts, setPosts] =useState([])
   const [currPage, setCurrPage] = useState(1);
-  const postPerPage=9;
+  const postPerPage=8;
   const [totalRow, setTotalRow] = useState(1);
 
   useEffect(()=>{
@@ -52,16 +52,17 @@ const equipment = () => {
       .then(res =>{
           if(res.data.status === 200){
             setPosts(res.data.equipment);
-            // setTotalRow(res.data.count)
-            const row = filterData.length;
-            if (row > 0){
-              setTotalRow(posts.length);
-            }else{
-              setTotalRow(1);
-            }
+            setTotalRow(res.data.count)
           }
           setLoading(false)
       }); 
+      // const row = posts.length;
+      // console.log(posts.length);
+      // if (row > 0){
+      //   setTotalRow(posts.length);
+      // }else{
+      //   setTotalRow(1);
+      // }
   },[]);
 
   const [selected1, setSelected1] = useState({value: 'all', label: 'Tất cả'})

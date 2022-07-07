@@ -50,10 +50,6 @@ const Post_equiment = ({posts, auth, url}) => {
                         Cập nhật
                     </span>
                     </td>
-                
-                {
-                    
-                }
             </tr>
         ))
     }

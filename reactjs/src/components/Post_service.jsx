@@ -5,7 +5,7 @@ import ReadMore from "../components/Read_more"
 
 const Post_service = ({posts, auth, url}) => {
     const Navigate = useNavigate();
-    
+    // console.log(posts)
   return (
     <tbody>
         {

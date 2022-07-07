@@ -19,6 +19,7 @@ class Equipment extends Authenticatable
      */
     protected $table = 'equipment';
     protected $fillable = [
+        'id',
         'id_equipment',
         'equipment_name',
         'address_IP',
@@ -27,23 +28,5 @@ class Equipment extends Authenticatable
         'username',
         'password'
     ];
-
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
-
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    protected $primaryKey = 'id';
 }

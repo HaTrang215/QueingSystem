@@ -8,7 +8,7 @@ import {MdOutlineContactPhone} from 'react-icons/md'
 import BoxNumber from '../components/Box_number';
 import SelectDropdown from '../components/select_dashboard'
 import LineChart from '../components/LineChart';
-// import CirclePercent from '../components/Circle_percent_contain'
+import CirclePercent from '../components/Circle_percent_contain'
 import axios from "axios";
 
 
@@ -127,11 +127,8 @@ const dashboard = () => {
             <div className="row-item4">
             <label className='name-page'>Tổng quan</label>
             </div>
-            {/* <CirclePercent
-              equipment={equipment}
-              service={service}
-              number={number}
-            /> */}
+            <CirclePercent
+            />
         </div>
       </div>
     </div>

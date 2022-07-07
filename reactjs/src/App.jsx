@@ -15,8 +15,7 @@ import ServiceDetail from "./pages/service_detail";
 import ServiceUpdate from "./pages/service_update";
 import SerialNumber from "./pages/serial-number";
 import SerialNumberAdd from "./pages/serial_number_add";
-import SerialNumberDetail from "./pages/serial_number_add";
-import SerialNumberUpdate from "./pages/serial_number_update"
+import SerialNumberDetail from "./pages/serial_number_detail";
 import Report from "./pages/report";
 import RoleManagement from "./pages/role_management";
 import RoleManagementAdd from "./pages/role_management_add";
@@ -52,19 +51,18 @@ function App() {
           <Route path="/equipment/update/:id" element={<EquipmentUpdate />}/>
           <Route path="/service" element={<Service />}/>
           <Route path="/service/add" element={<ServiceAdd />}/>
-          <Route path="/service/detail" element={<ServiceDetail />}/>
-          <Route path="/service/update" element={<ServiceUpdate />}/>
+          <Route path="/service/detail/:id" element={<ServiceDetail />}/>
+          <Route path="/service/update/:id" element={<ServiceUpdate />}/>
           <Route path="/serial-number" element={<SerialNumber/>}/>
           <Route path="/serial-number/add" element={<SerialNumberAdd />}/>
-          <Route path="/serial-number/detail" element={<SerialNumberDetail />}/>
-          <Route path="/serial-number/update" element={<SerialNumberUpdate />}/>
+          <Route path="/serial-number/detail/:id" element={<SerialNumberDetail />}/>
           <Route path="/report" element={<Report />}/>
           <Route path="/role-management" element={<RoleManagement/>}/>
-          <Route path="/role-management/add" element={<RoleManagementAdd />}/>
-          <Route path="/role-management/update" element={<RoleManagementUpdate />}/>
+          <Route path="/role-management/add/:id" element={<RoleManagementAdd />}/>
+          <Route path="/role-management/update/:id" element={<RoleManagementUpdate />}/>
           <Route path="/account-management" element={<AccountManagement/>}/>
           <Route path="/account-management/add" element={<AccountManagementAdd />}/>
-          <Route path="/account-management/update" element={<AccountManagementUpdate />}/>
+          <Route path="/account-management/update/:id" element={<AccountManagementUpdate />}/>
           <Route path="/diary" element={<Diary/>}/>
           <Route path="/user-interface" element={<UserInterface/>}/>
           <Route path="/display-kios" element={<DisplayKios/>}/>

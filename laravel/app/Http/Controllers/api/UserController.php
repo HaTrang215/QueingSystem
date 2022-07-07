@@ -54,7 +54,7 @@ class UserController extends Controller
                 $file= $req->file('image');
                 $extension= $file->getClientOriginalExtension();
                 $filename=time().'.'.$extension;
-                $file->move('uploads/avatar/', $filename);
+                $file->move('.uploads/avatar/', $filename);
                 $user->avatar='uploads/avatar/'.$filename;
             }
             $user->save();

@@ -33,12 +33,13 @@ const diary = () => {
         if(res.data.status === 200){
           setPosts(res.data.diary);
           setBegindate(res.data.minDate)
-          const row = filterData.length;
-          if (row > 0){
-            setTotalRow(posts.length);
-          }else{
-            setTotalRow(1);
-          }
+          setTotalRow(res.data.count);
+          // const row = filterData.length;
+          // if (row > 0){
+          //   setTotalRow(posts.length);
+          // }else{
+          //   setTotalRow(1);
+          // }
         }
         setLoading(false)
     }); 

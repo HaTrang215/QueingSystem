@@ -2,7 +2,7 @@
 import React from 'react'
 import { useNavigate } from "react-router-dom";
 
-const Post_equiment = ({posts, auth, url}) => {
+const Post_serial_number = ({posts, auth, url}) => {
     const Navigate = useNavigate();
     
   return (
@@ -33,13 +33,6 @@ const Post_equiment = ({posts, auth, url}) => {
                         Chi tiết
                     </span>
                 </td>
-                <td>
-                    <span 
-                        className={(auth === '212' || auth === '321' || auth === '631'|| auth === '522')? 'title-func' : 'btn-block'}
-                        onClick={(auth === '212' || auth === '321' || auth === '631'|| auth === '522')? ()=>Navigate(`${url}/update/${p.id_number_supply}`):()=>''}>
-                        Cập nhật
-                    </span>
-                    </td>
             </tr>
         ))
     }
@@ -47,4 +40,4 @@ const Post_equiment = ({posts, auth, url}) => {
   )
 }
 
-export default Post_equiment
+export default Post_serial_number

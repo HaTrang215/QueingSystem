@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
     "chart.js": "^3.8.0",
+    "cors": "^2.8.5",
     "date-fns": "^2.28.0",
     "dayjs": "^1.11.3",
     "formatdate": "^0.3.3",

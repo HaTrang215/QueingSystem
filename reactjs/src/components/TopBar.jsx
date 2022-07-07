@@ -19,6 +19,7 @@ const TopBar = (props) => {
     }
     
     const [name, setName]=useState('')
+    // const [avatar, setAvatar]=useState('')
 
     useEffect(()=>{
         const id = localStorage.getItem('id_user')
@@ -26,16 +27,15 @@ const TopBar = (props) => {
         const data={
             id: id,
           }
-          axios.get('/sanctum/csrf-cookie').then(response => {
-            axios.post('/api/loaduser', data)
-            .then(res =>{
-                if(res.data.status === 200){
-                    setName(res.data.user.name)
-                    console.log(res.data.status)
-                }else {
-                    console.log(res.data.messenger);
-                }
-            });
+        axios.post('/api/loaduser', data)
+        .then(res =>{
+            if(res.data.status === 200){
+                setName(res.data.user.name)
+                // setAvatar(res.data.user.avatar)
+                // console.log(res.data.status)
+            }else {
+                console.log(res.data.messenger);
+            }
         });
     });
 
@@ -67,7 +67,8 @@ const TopBar = (props) => {
         }
         </OutsideClickHandler>
         <div className="infor-account">
-            <img src={ Avatar} alt="avata" className="avatar"/>
+            {/* <img src={`http://localhost:8000/${avatar}`} alt="avata" className="avatar"/> */}
+            <img src={Avatar} alt="avata" className="avatar"/>
             <div className="text-account" onClick={accoount}>
                 <p className="greeting">Xin chào</p>
                 <p className="name-user">{name}</p>

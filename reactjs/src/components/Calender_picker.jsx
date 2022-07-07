@@ -122,8 +122,8 @@ const Calender_single = (props) => {
                 }
             </div>
         {
-            calendar.map((week)=>(
-            <div className='day-container' key={week}>
+            calendar.map((week,index)=>(
+            <div className='day-container' key={index}>
                 {week.map((day)=>(
                 <div className='day' onClick={()=>((afterToday(day))? "" :setValue(day))}>
                     <label className={dayStyles(day)} key={value}>

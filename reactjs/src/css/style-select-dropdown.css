@@ -58,3 +58,146 @@
     font-size: 14px;
     line-height: 21px;
 }
+
+.dropdown-item1{
+    padding: 10px 0px 12px 10px;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #282739;
+}
+
+.dropdown-active1{
+    padding: 10px 0px 12px 10px;
+    background: #FFF2E7;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #282739;
+}
+
+.select1{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #282739;
+}
+
+.option-custom {
+    position: relative;
+  }
+  
+.select-input {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: 1.5px solid #D4D4D7;
+    border-radius: 8px;
+    padding: 0 10px;
+    position: relative;
+    height: 42px;
+  }
+  
+.select-input--multiple {
+    height: auto;
+    min-height: 42px;
+    flex-wrap: wrap;
+  }
+
+.select-click {
+flex: 1;
+height: 42px;
+}
+
+.select-icon {
+font-size: 20px;
+margin-right: 5px;
+color: #84ce3f;
+flex-basis: 30px;
+}
+
+.select-title {
+color: #252525;
+}
+
+.select-title.placeholder {
+color: #ccc;
+}
+
+.select-list {
+position: absolute;
+top: 110%;
+left: 0;
+max-height:154px;
+padding: 12px 0px;
+background: #fff;
+color: #7E7D88;
+width: 100%;
+border: 1.5px solid #D4D4D7;
+box-shadow: 0px 0px 6px #E7E9F2;
+border-radius: 8px;
+z-index: 3; 
+overflow: scroll ;
+overflow-x: hidden;
+}
+
+.select-list::-webkit-scrollbar{
+    width: 4px;
+}
+
+.select-list::-webkit-scrollbar-track{
+    padding-right: 4px;
+}
+
+.select-list::-webkit-scrollbar-thumb{
+    background: #FFC89B;
+    border-radius: 43px;
+}
+
+.select-item {
+display: flex;
+align-items: center;
+cursor: pointer;
+padding: 10px;
+
+}
+
+.select-item:hover {
+background: #FFF2E7;
+}
+
+.selected-list {
+display: flex;
+flex-wrap: wrap;
+width: 100%;
+}
+
+.placeholder{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #A9A9B0;
+    padding-top: 10px;
+}
+.selected-item {
+padding: 5px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+background: #FFAC6A;
+box-shadow: 0px 0px 6px #E7E9F2;
+border-radius: 9px;
+margin: 5px;
+}
+
+.selected-item span {
+margin-right: 5px;
+font-family: 'Nunito';
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 19px;
+color: #FFFFFF;
+padding-left: 12px;
+}

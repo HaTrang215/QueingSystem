@@ -9,8 +9,8 @@ import Calendar from './Calender_picker';
 import moment from "moment"
 
 
-const Circle_percent_contain = (props) => {
-    const [equipment, service, number]=props
+const Circle_percent_contain = () => {
+    // const [equipment, service, number]=props
 
     function point(number){
         const a = '';
@@ -29,30 +29,30 @@ const Circle_percent_contain = (props) => {
             colorIcon: '#FFD130', 
             nameNote: 'Đang hoạt động', 
             colorNumber: '#FF7506',
-            numberNote: point(equipment.danghoatdong)
+            numberNote: 4.221
         },
         {
             key:2,
             colorIcon: '#7E7D88', 
             nameNote: 'Ngưng hoạt động', 
             colorNumber: '#FF7506',
-            numberNote: point(equipment.ngunghoatdong)
+            numberNote: 422
         }
     ]
 
     const equipment1 =
         {
-            v1: equipment.danghoatdong,
+            v1: 4221,
             c1: '#FF7506',
-            v2: equipment.ngunghoatdong,
+            v2: 422,
 
         }
 
     const equipment2 =
         {
-            v1: equipment.ngunghoatdong,
+            v1: 422,
             c1: '#7E7D88',
-            v2: equipment.danghoatdong,
+            v2: 4221,
         }
     
     //service
@@ -62,29 +62,29 @@ const Circle_percent_contain = (props) => {
             colorIcon: '#4277FF', 
             nameNote: 'Đang hoạt động', 
             colorNumber: '#4277FF',
-            numberNote: point(service.danghoatdong)
+            numberNote: 276
         },
         {
             key:2,
             colorIcon: '#7E7D88', 
             nameNote: 'Ngưng hoạt động', 
             colorNumber: '#4277FF',
-            numberNote: point(service.ngunghoatdong)
+            numberNote: 66
         }
     ]
 
     const service1 =
         {
-            v1: service.danghoatdong,
+            v1: 276,
             c1: '#4277FF',
-            v2: service.ngunghoatdong,
+            v2: 66,
         }
 
     const service2 =
         {
-            v1: service.ngunghoatdong,
+            v1: 66,
             c1: '#7E7D88',
-            v2: service.danghoatdong,
+            v2: 276
         }
     
     //number
@@ -94,45 +94,45 @@ const Circle_percent_contain = (props) => {
             colorIcon: '#35C75A', 
             nameNote: 'Đang chờ', 
             colorNumber: '#35C75A',
-            numberNote: point(number.dangcho)
+            numberNote: 3.721
         },
         {
             key:2,
             colorIcon: '#7E7D88', 
             nameNote: 'Đã sử dụng', 
             colorNumber: '#35C75A',
-            numberNote: point(number.dasudung)
+            numberNote: 486
         },
         {
             key:3,
             colorIcon: '#F178B6', 
             nameNote: 'Bỏ qua', 
             colorNumber: '#35C75A',
-            numberNote: point(number.boqua)
+            numberNote: 32
         }
     ]
 
     const number1 =
         {
-            v1: number.dangcho,
+            v1: 3721,
             c1: '#35C75A',
-            v2: number.dasudung+number.boqua,
+            v2: 486+32,
 
         }
 
     const number2 =
         {
-            v1: number.dasudung,
+            v1: 486,
             c1: '#7E7D88',
-            v2: number.dangcho+number.dasudung,
+            v2: 3721+32,
 
         }
 
     const number3 =
     {
-        v1: number.boqua,
+        v1: 32,
         c1: '#F178B6',
-        v2: number.dangcho+number.dasudung,
+        v2: 3721+486,
     }
 
     //Get date calendar
