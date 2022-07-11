@@ -54,15 +54,10 @@ const account_management = () => {
             setPosts(res.data.account);
             setOptions1(res.data.role);
             setTotalRow(res.data.count);
-            // const row = filterData.length;
-            // if (row > 0){
-            //   setTotalRow(posts.length);
-            // }else{
-            //   setTotalRow(1);
-            // }
           }
           setLoading(false)
       }); 
+
   },[]);
 
   const [selected1, setSelected1] = useState({value: 'all', label: 'Tất cả'})
@@ -117,6 +112,14 @@ var filterData= useMemo(filterActive, [selected1,values.searchContent, posts])
 function onPageChange (newPage){
   setCurrPage(newPage);
 }
+
+// var row = Object.keys(filterData).length;
+// if (row > 0){
+//     setTotalRow(row);
+//   }else{
+//     setTotalRow(1);
+//   }
+//   console.log(row);
 
 const endPost = currPage*postPerPage;
 const firstPost = endPost - postPerPage;

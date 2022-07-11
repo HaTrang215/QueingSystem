@@ -47,10 +47,10 @@ const [serviceInput, setService] = useState({
   id_service:'',
   service_name:'',
   describe:'',
-  start:0,
-  end:9999,
-  prefix:0,
-  surfix:0
+  start:'0001',
+  end:'9999',
+  prefix:'0001',
+  surfix:'0001'
 })
 
 const handleInput = (e) =>{
@@ -78,10 +78,10 @@ const submitService = (e)=>{
     service_name: serviceInput.service_name,
     describe: serviceInput.describe,
     auto_increate: (isCkecked1===true)?1:0,
-    start: (isCkecked1===true)?serviceInput.start: 0,
-    end: (isCkecked1===true)?serviceInput.end: 0,
-    prefix: (isCkecked2===true)?serviceInput.prefix: 0,
-    surfix: (isCkecked3===true)?serviceInput.surfix: 0,
+    start: (isCkecked1===true)?serviceInput.start: '0',
+    end: (isCkecked1===true)?serviceInput.end: '0',
+    prefix: (isCkecked2===true)?serviceInput.prefix: '0',
+    surfix: (isCkecked3===true)?serviceInput.surfix: '0',
     reset_daily: (isCkecked1===true)?1:0,
     id_user: id_user,
   }

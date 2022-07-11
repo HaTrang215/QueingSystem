@@ -201,3 +201,14 @@ line-height: 19px;
 color: #FFFFFF;
 padding-left: 12px;
 }
+
+.select-wrap1{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center
+}
+
+.select-content1{
+    text-align: left;
+}

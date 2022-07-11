@@ -19,10 +19,10 @@ const Post_serial_number = ({posts, auth, url}) => {
                 <td>
                     {
                         (p.status_active === 0 )? 
-                        (<label><div className="point p-red"></div>Bỏ qua</label>) :
+                        (<label><div className="point p-wait"></div>Đang chờ</label>) :
                         (p.status_active === 1 )?
-                        (<label><div className="point p-wait"></div>Đang chờ</label>):
-                        (<label><div className="point p-used"></div>Đã sử dụng</label>)
+                        (<label><div className="point p-used"></div>Đã sử dụng</label>):
+                        (<label><div className="point p-red"></div>Bỏ qua</label>)
                     }
                 </td>
                 <td>{p.type_name_vi}</td>

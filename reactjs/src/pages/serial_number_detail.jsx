@@ -55,7 +55,7 @@ const serial_number_detail = (props) => {
     <div className="container">
       <GroupNavbar content={groupFunction}/>
       <div className="content">
-        <Topbar title1='Thiết bị' title2='Danh sách cấp số' title3='Chi tiết'/>
+        <Topbar title1='Cấp số' title2='Danh sách cấp số' title3='Chi tiết'/>
         <div className="wrap-main">
         <div className="main">
           <div className="wrap-table">

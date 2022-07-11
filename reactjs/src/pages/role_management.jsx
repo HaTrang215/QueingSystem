@@ -161,7 +161,7 @@ const currPosts = filterData.slice(firstPost,endPost);
         <div 
             className={(auth === '111' || auth === '321' || auth === '421'|| auth === '631')? "button-add": "button-add-block"}
             onClick={(auth === '111' || auth === '321' || auth === '421'|| auth === '631')? ()=>Navigate(url+'/add'): ()=>''}>
-            <label><AiFillPlusSquare className='icon-button'/><br/>Thêm thiết bị</label>
+            <label><AiFillPlusSquare className='icon-button'/><br/>Thêm <br/>vai trò</label>
         </div>
         </div>
       </div>

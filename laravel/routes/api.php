@@ -52,6 +52,8 @@ Route::get('detail-service/{id}', [ServiceController::class, 'detail']);
 //Serial-number
 Route::get('list-serial-number', [SerialNumberController::class, 'index']);
 Route::get('detail-serial-number/{id}', [SerialNumberController::class, 'detail']);
+Route::get('edit-add-number', [SerialNumberController::class, 'edit']);
+Route::post('add-number-serial', [SerialNumberController::class, 'add']);
 
 //Role-management
 Route::get('list-role-management', [RoleController::class, 'index']);

@@ -35,6 +35,9 @@ const GroupNavbar = (props) => {
       .then(res =>{
           if(res.data.status === 200){
             localStorage.removeItem('id_user', id);
+            localStorage.removeItem('auth_token', res.data.token);
+            localStorage.removeItem('auth_name', res.data.username);
+            localStorage.removeItem('id_equipment', res.data.id_equipment);
             Navigate("/login");
           }else {
           }

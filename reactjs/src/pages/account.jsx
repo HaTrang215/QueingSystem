@@ -5,7 +5,7 @@ import '../css/style-main.css'
 import GroupNavbar from '../components/GroupNavbar'
 import Topbar from '../components/TopBar';
 import axios from "axios";
-import Avatar from '../assets/avatar/hình nền.png'
+// import Avatar from '../assets/avatar/hình nền.png'
 import {FiCamera} from 'react-icons/fi'
 
 const account = () => {
@@ -58,8 +58,8 @@ const account = () => {
         <Topbar title1='' title2='' title3='Thông tin cá nhân'/>
         <div className="panel-account">
           <div className="col-item-1">
-              {/* <img src={`http://localhost:8000/${account.avatar}`} className="img-avarta" alt=''/> */}
-              <img src={Avatar} className="img-avarta" alt=''/>
+              <img src={`http://localhost:8000/${account.avatar}`} className="img-avarta" alt=''/>
+              {/* <img src={Avatar} className="img-avarta" alt=''/> */}
               <input id="selectFile" type="file" name="image" style={{display: "none"}} onChange={imgSelectHandle} ref={selected}/>
               <FiCamera className='btn-upload-photo' onClick={uploadFile}/>
               <div className="name-avatar"><p>{account.name}</p></div>

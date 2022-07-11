@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import '../css/style-topbar.css'
 import {MdOutlineNavigateNext} from 'react-icons/md';
 import {FaBell} from 'react-icons/fa'
-import Avatar from '../assets/avatar/hình nền.png'
+// import Avatar from '../assets/avatar/hình nền.png'
 import NotificationBox from '../components/Notification_box'
 import OutsideClickHandler from 'react-outside-click-handler';
 import { useNavigate } from "react-router-dom";
@@ -19,7 +19,7 @@ const TopBar = (props) => {
     }
     
     const [name, setName]=useState('')
-    // const [avatar, setAvatar]=useState('')
+    const [avatar, setAvatar]=useState('')
 
     useEffect(()=>{
         const id = localStorage.getItem('id_user')
@@ -31,7 +31,7 @@ const TopBar = (props) => {
         .then(res =>{
             if(res.data.status === 200){
                 setName(res.data.user.name)
-                // setAvatar(res.data.user.avatar)
+                setAvatar(res.data.user.avatar)
                 // console.log(res.data.status)
             }else {
                 console.log(res.data.messenger);
@@ -67,8 +67,8 @@ const TopBar = (props) => {
         }
         </OutsideClickHandler>
         <div className="infor-account">
-            {/* <img src={`http://localhost:8000/${avatar}`} alt="avata" className="avatar"/> */}
-            <img src={Avatar} alt="avata" className="avatar"/>
+            <img src={`http://localhost:8000/${avatar}`} alt="avata" className="avatar"/>
+            {/* <img src={Avatar} alt="avata" className="avatar"/> */}
             <div className="text-account" onClick={accoount}>
                 <p className="greeting">Xin chào</p>
                 <p className="name-user">{name}</p>

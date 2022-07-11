@@ -56,12 +56,8 @@ const serial_number = () => {
             setBegindate(res.data.min_date);
             setService(res.data.service);
             setType(res.data.type_equiment)
-            const row = filterData.length;
-            if (row > 0){
-              setTotalRow(posts.length);
-            }else{
-              setTotalRow(1);
-            }
+            setTotalRow(res.data.count);
+            
           }
           setLoading(false)
       }); 

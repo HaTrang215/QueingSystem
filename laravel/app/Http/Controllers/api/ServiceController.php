@@ -53,6 +53,7 @@ class ServiceController extends Controller
             $find = DB::table('service')->where('id_service','=',$req->id_service)->first();
             if(!$find){
                 $service= new Service;
+                $service->id = 0;
                 $service->id_service = $req->id_service;
                 $service->service_name = $req->service_name;
                 $service->describe = $req->describe;
@@ -63,6 +64,7 @@ class ServiceController extends Controller
                 $id_detail_service = DB::table('detail_service')->count();
                 $date =date_format($today,"Y-m-d");
                 $ds=new Detail_Service;
+                $ds->id = 0;
                 $ds->id_detail_service = $id_detail_service+1;
                 $ds->id_service = $req->id_service;
                 $ds->auto_increate = $req->auto_increate;
@@ -234,6 +236,7 @@ class ServiceController extends Controller
                     'status'=>200,
                     'messenger'=>'Thêm thành công',
                     'detail'=>$detail,
+                    'service'=>$service,
                 ]);
             }else{
                 return response()->json([
@@ -268,5 +271,5 @@ class ServiceController extends Controller
             'count'=>$count
         ]);
     }
-    
+
 }
