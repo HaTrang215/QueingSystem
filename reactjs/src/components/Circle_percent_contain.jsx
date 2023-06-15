@@ -12,17 +12,17 @@ import moment from "moment"
 const Circle_percent_contain = () => {
     // const [equipment, service, number]=props
 
-    function point(number){
-        const a = '';
-        for (const i=0; i<number.lengh;i+1){
-            if(i%3===0){
-                a =a+'.'+number/10;
-            }else{
-                a =a+number/10;
-            }
-        }
-        return value.clone().subtract(1, "month");
-      }
+    // function point(number){
+    //     const a = '';
+    //     for (const i=0; i<number.lengh;i+1){
+    //         if(i%3===0){
+    //             a =a+'.'+number/10;
+    //         }else{
+    //             a =a+number/10;
+    //         }
+    //     }
+    //     return value.clone().subtract(1, "month");
+    //   }
     const equipmentInput =[
         {
             key:1,

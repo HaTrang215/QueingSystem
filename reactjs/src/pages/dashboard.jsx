@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React, { useState,useEffect } from 'react'
+import React, { useState } from 'react'
 import '../css/style-main.css'
 import GroupNavbar from '../components/GroupNavbar'
 import Topbar from '../components/TopBar';
@@ -9,24 +9,24 @@ import BoxNumber from '../components/Box_number';
 import SelectDropdown from '../components/select_dashboard'
 import LineChart from '../components/LineChart';
 import CirclePercent from '../components/Circle_percent_contain'
-import axios from "axios";
+// import axios from "axios";
 
 
 const dashboard = () => {
-  const [equipment, setEquipmqent]=useState([])
-  const [service, setService]=useState([])
-  const [number, setNumber]=useState([])
+  // const [equipment, setEquipmqent]=useState([])
+  // const [service, setService]=useState([])
+  // const [number, setNumber]=useState([])
 
-  useEffect(()=>{
-    axios.get('/api/list-equipment')
-    .then(res =>{
-      if(res.data.status === 200){
-        setEquipmqent(res.data.equipment);
-        setService(res.data.service);
-        setNumber(res.data.number)
-      }  
-    }); 
-  },[]);
+  // useEffect(()=>{
+  //   axios.get('/api/list-equipment')
+  //   .then(res =>{
+  //     if(res.data.status === 200){
+  //       setEquipmqent(res.data.equipment);
+  //       setService(res.data.service);
+  //       setNumber(res.data.number)
+  //     }  
+  //   }); 
+  // },[]);
 
   const inputs=[
     {

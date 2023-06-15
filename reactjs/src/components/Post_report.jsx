@@ -1,8 +1,8 @@
 import React from 'react'
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const Post_report = ({posts}) => {
-    const Navigate = useNavigate();
+    // const Navigate = useNavigate();
     
   return (
     <tbody>
